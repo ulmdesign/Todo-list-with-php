@@ -31,7 +31,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `task_table` (
   `id` int(5) NOT NULL,
   `task_name` varchar(300) NOT NULL,
-  `added_tiime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+  `added_tiime` timestamp NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --

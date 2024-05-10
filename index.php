@@ -8,11 +8,15 @@ require_once "header.php";
   <div class="row">
     <div class="col-8 m-auto">
 
-    <h2 class="display-4 text-center" >My To Do List</h2>
+    <h2 class="display-4 text-center">My To Do List</h2>
       <form class="mt-4" action="index_valid.php" method="post">
         <div class="form-group">
-          <input class= "form-control form-control-lg" type="text" name="textfield" placeholder="Enter your task"  >
+          <input class="form-control form-control-lg" type="text" name="textfield" placeholder="Enter your task">
 
+        </div>
+        <div class="form-group">
+          <label for="task_date">Task Date and Time:</label>
+          <input class="form-control form-control-lg" type="datetime-local" name="task_date">
         </div>
         <div class="">
           <input class="btn btn-success btn-block" type="submit" name="addtask" value="Add Task">
