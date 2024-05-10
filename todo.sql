@@ -44,6 +44,9 @@ CREATE TABLE `task_table` (
 ALTER TABLE `task_table`
   ADD PRIMARY KEY (`id`);
 
+ALTER TABLE `task_table`
+  ADD COLUMN `modified_time` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP AFTER `added_tiime`;
+
 --
 -- AUTO_INCREMENT for dumped tables
 --

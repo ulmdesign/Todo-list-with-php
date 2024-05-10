@@ -65,6 +65,8 @@ require_once "header.php";
     <th>task</th>
     <th>added date</th>
     <th>added time</th>
+    <th>modified date</th>
+    <th>modified time</th>
     <th>action </th>
   </tr>
 </thead>
@@ -77,8 +79,11 @@ if($result->num_rows!=0){
   $serial = 1;
   foreach ($result as $row) {
     $temp_date_time=(explode(' ',$row['added_tiime']));
+    $modified_date_time=(explode(' ',$row['modified_time']));
     $date = $temp_date_time[0];
     $time = $temp_date_time[1];
+    $datem = $modified_date_time[0];
+    $timem = $modified_date_time[1];
 
 ?>
 
@@ -87,7 +92,8 @@ if($result->num_rows!=0){
   <td ><?=$row['task_name'] ?></td>
   <td><?=$date?></td>
   <td><?=$time?></td>
-
+  <td><?=$datem?></td> <!--the task date modified -->
+  <td><?=$timem?></td> <!--the task time modified -->
 
   <td>
   <div class="btn-group">

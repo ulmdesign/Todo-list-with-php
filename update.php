@@ -1,4 +1,3 @@
-
 <?php
 session_start();
 require_once 'db.php';
@@ -9,7 +8,10 @@ $f_result = $data_from_db->fetch_assoc();
 
 if(isset($_POST['update'])){
   $update_text = $_POST['update_text'];
-  $update_query = "UPDATE task_table SET task_name='$update_text' WHERE id=$id";
+  $update_query = "UPDATE task_table 
+                   SET task_name='$update_text', 
+                       modified_time=new DateTime('now');
+                   WHERE id=$id";
   $update_date = $dbcon->query($update_query);
   if($update_date){
     $_SESSION['upadate_success'] = "Task updated successfully!";
